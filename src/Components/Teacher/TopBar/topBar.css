@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORT MUST NEVER BE DELETED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss';
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+@theme {
+  --font-sans: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #3b5bf6;
+  --color-brand-soft: #eef2ff;
+  --color-ink: #111827;
+  --color-muted: #6b7280;
+  --color-subtle: #8a94a6;
+  --color-line: #e8ebf0;
+  --color-chip: #f4f6fa;
+  --color-canvas: #f7f8fa;
+  --color-danger: #ef4444;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif !important;
+  color: var(--color-ink);
+}
