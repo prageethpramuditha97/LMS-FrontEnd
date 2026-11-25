@@ -7,7 +7,7 @@ type Props = Partial<typeof args> & { onStart?: () => void; onViewCalendar?: () 
 const Dashboard: React.FC<Props> = (props) => {
     const { teacherName, role, date, shortDate, time, liveClasses, unreadMessages, liveStatus } = { ...args, ...props }
     return (
-        <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
+        <div className="flex h-[50vh] flex-1 flex-col overflow-y-auto lg:h-auto lg:max-h-[90vh] lg:flex-row">
             <ClassroomSection liveClasses={liveClasses} unreadMessages={unreadMessages} />
             <UpcomingClasses liveStatus={liveStatus} onStart={props.onStart} onViewCalendar={props.onViewCalendar} />
         </div>

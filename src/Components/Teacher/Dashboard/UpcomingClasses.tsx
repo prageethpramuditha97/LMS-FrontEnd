@@ -10,7 +10,7 @@ type UpcomingClassesProps = {
 
 /** Bottom panel on phones, right column on desktop — its list scrolls on its own. */
 export const UpcomingClasses: React.FC<UpcomingClassesProps> = ({ liveStatus, onStart, onViewCalendar }) => (
-  <aside className="flex h-[46%] shrink-0 flex-col border-t border-line bg-white lg:h-auto lg:w-[400px] lg:border-l lg:border-t-0">
+  <aside className="flex h-[50vh] shrink-0 flex-col border-t border-line bg-white lg:h-auto lg:w-[400px] lg:border-l lg:border-t-0">
     <div className="flex shrink-0 items-center justify-between px-5 pb-3 pt-5">
       <h2 className="text-lg font-bold">Upcoming classes</h2>
       <button onClick={onViewCalendar} className="text-sm font-medium text-brand hover:underline">
