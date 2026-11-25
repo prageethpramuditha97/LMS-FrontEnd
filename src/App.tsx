@@ -52,14 +52,14 @@ function App() {
           {/* Redirect root based on user type */}
           <Route path="/" element={
             loggedInUser?
-              <Navigate to={"/" + loggedInUser.type + "/"} replace />
+              <Navigate to={"/" + loggedInUser.Account_Type + "/"} replace />
               : <Navigate to="/login" replace />
           } />
 
           <Route path="/login" element={
             loggedInUser?
-              <Navigate to={"/" + loggedInUser.type + "/"} replace />
-              : <TeacherMain />
+              <Navigate to={"/" + loggedInUser.Account_Type + "/"} replace />
+              : <Login />
           } /> 
           
           <Route path="/Admin/*" element={

@@ -7,7 +7,7 @@ import './TopBar/topBar.css'
 function TeacherMain() {
   
   return (
-    <div className="flex min-h-screen bg-gray-200 flex-col overflow-hidden bg-page font-sans text-ink">
+    <div className="flex min-h-screen bg-gray-200/60 flex-col overflow-hidden bg-page font-sans text-ink">
       <TopBar
           name="Dilani Fernando"
           role="Science Teacher"
