@@ -29,7 +29,7 @@ function App() {
         const response = await get('api/edu/validate', {
           headers: { Authorization: `Bearer ${token}` },
         });
-
+        console.log("called");
         if(!response.data.valid){
           localStorage.removeItem("logedInUser_eduSpace_codeStack");
           localStorage.removeItem("logedInUser_eduSpace_codeStack_accessToken");
@@ -59,7 +59,7 @@ function App() {
           <Route path="/login" element={
             loggedInUser?
               <Navigate to={"/" + loggedInUser.Account_Type + "/"} replace />
-              : <Login />
+              : <TeacherMain />
           } /> 
           
           <Route path="/Admin/*" element={
