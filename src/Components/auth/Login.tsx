@@ -35,15 +35,49 @@ const Login: React.FC<LoginProps> = () => {
     }))
   }
 
+  const loginUser = async () => {
+      try {
+          dispatch(setLoading(true));
+          const response = await post('/api/auth/login', {
+            email: formData.username,
+            password: formData.password,
+          });
+
+          /*localStorage.setItem("logedInUser_eduSpace_codeStack", JSON.stringify(response.data.user));
+          localStorage.setItem("logedInUser_eduSpace_codeStack_accessToken", response.data.token);
+          localStorage.setItem("logedInUser_eduSpace_codeStack_accessToken_exp", response.data.randomExpire);
+          
+          window.location.href= '/';*/
+          console.log(response);
+          
+      } catch (err: any) {
+        if (err.response) {
+          if (err.response.status === 400) {
+            alert('Username or Password can not be empty');
+          } else if (err.response.status === 401) {
+            alert('Invalid Username or Password');
+          } else if (err.response.status === 500) {
+            alert('Server Error');
+          } 
+        } else {
+          alert('Network Error');
+        }
+      } finally {
+          dispatch(setLoading(false));
+      }
+    };
+
+
+
   // Handle Sign In
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     dispatch(setLoading(true));
-    // Add your login authentication logic here
-    // Example: dispatch(setLoading(true))
-
+    loginUser();
     //https://codestackserver.site/api/auth/login
+
+    
   }
 
   return (

@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 // Create an Axios instance
 const apiClient: AxiosInstance = axios.create({
-  baseURL: "https://eduspaceserver-5d007c54940a.herokuapp.com/",
+  baseURL: "https://codestackserver.site/",
   //baseURL: 'https://eduspaceserver.codestack.lk/',
   //baseURL: "http://localhost:8081/",
   timeout: 10000,
