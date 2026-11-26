@@ -1,3 +1,4 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Dashboard from './Dashboard/Dashboard';
 import TopBar from './TopBar/TopBar';
 
@@ -15,8 +16,11 @@ function TeacherMain() {
           onProfile={() => console.log('Profile clicked')}
           onLogout={() => console.log('Logout clicked')}
         />
-      
-      <Dashboard />
+
+        <Routes>
+          <Route path="/" element={<Navigate to="/Teacher/Dashboard" replace />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+        </Routes>
     </div>
   );
 }

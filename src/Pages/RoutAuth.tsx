@@ -17,7 +17,7 @@ const RoutAuth = ({ allowedRoles, children }: RoutAuthProps) => {
     return <Navigate to="/login" replace />;
   }
 
-  if (!allowedRoles.includes(user.type)) {
+  if (!allowedRoles.includes(user.Account_Type)) {
     return <NotAuthorized />; // or a NotAuthorized component
   }
 

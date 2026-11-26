@@ -92,6 +92,16 @@ export default function Header({
     hour12: true
   })
 
+  const handleLogOut = () => {
+    setOpen(false);
+
+    localStorage.removeItem("logedInUser_eduSpace_codeStack");
+    localStorage.removeItem("logedInUser_eduSpace_codeStack_accessToken");
+    localStorage.removeItem("logedInUser_eduSpace_codeStack_accessToken_exp");
+
+    window.location.href = '/';
+  };
+
   return (
     <div className="min-h-full w-full bg-canvas font-inter">
 
@@ -260,10 +270,7 @@ export default function Header({
                       <button
                         type="button"
                         role="menuitem"
-                        onClick={() => {
-                          setOpen(false)
-                          onLogout?.()
-                        }}
+                        onClick={handleLogOut}
                         className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left text-[15px] font-light text-danger transition-colors duration-150 hover:bg-red-50"
                       >
 

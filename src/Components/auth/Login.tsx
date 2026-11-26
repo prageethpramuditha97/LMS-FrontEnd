@@ -43,12 +43,11 @@ const Login: React.FC<LoginProps> = () => {
             password: formData.password,
           });
 
-          /*localStorage.setItem("logedInUser_eduSpace_codeStack", JSON.stringify(response.data.user));
+          localStorage.setItem("logedInUser_eduSpace_codeStack", JSON.stringify(response.data.user));
           localStorage.setItem("logedInUser_eduSpace_codeStack_accessToken", response.data.token);
           localStorage.setItem("logedInUser_eduSpace_codeStack_accessToken_exp", response.data.randomExpire);
           
-          window.location.href= '/';*/
-          console.log(response);
+          window.location.href= '/';
           
       } catch (err: any) {
         if (err.response) {

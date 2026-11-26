@@ -15,12 +15,13 @@ import RoutAuth from './Pages/RoutAuth'
 import { ZoomMeeting } from './Pages/ZoomMeeting'
 
 import { ForgetPassword } from './Components/auth/ForgetPassword'
+import Dashboard from './Components/Teacher/Dashboard/Dashboard.tsx';
 
 
 function App() {
   const isLoading = useSelector((state: RootState) => state.loading.isLoading);
   const loggedInUser = useSelector((state: RootState) => state.user.user);
-
+  console.log(loggedInUser);
   useEffect(() => {
     const token = localStorage.getItem("logedInUser_eduSpace_codeStack_accessToken");
     
@@ -40,7 +41,7 @@ function App() {
         
       }
     };
-    if(token){fetchData();}
+   // if(token){fetchData();}
   }, []);
 
   return (
@@ -59,7 +60,7 @@ function App() {
           <Route path="/login" element={
             loggedInUser?
               <Navigate to={"/" + loggedInUser.Account_Type + "/"} replace />
-              : <TeacherMain />
+              : <Login />
           } /> 
           
           <Route path="/Admin/*" element={
@@ -85,6 +86,9 @@ function App() {
           <Route path="/join_meeting" element={
             <ZoomMeeting height="0px" />
           } />
+
+
+          <Route path="/Teacher/ClassManager" element={<Dashboard />} />
 
       </Routes>
       
